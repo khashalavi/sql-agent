@@ -1,0 +1,19 @@
+{
+  "tables": {
+    "table1": {
+      "description": "",
+      "columns": {
+      }
+    },
+    "table2": {
+      "description": "",
+      "columns": {
+      }
+    },
+    "table3": {
+      "description":"",
+      "columns": {
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "tables": {
+    "film": {
+      "description": "Stores data about films in the rental store. Each film has a title, description, release year, and other attributes. It connects to actors via the `film_actor` table and categories via the `film_category` table.",
+      "columns": {
+        "film_id": "A unique identifier for each film.",
+        "title": "The title of the film.",
+        "description": "A brief summary of the film's plot.",
+        "release_year": "The year the film was released.",
+        "language_id": "A foreign key linking to the `language` table.",
+        "rental_duration": "The standard number of days the film can be rented for.",
+        "rental_rate": "The cost to rent the film for the standard duration.",
+        "length": "The duration of the film in minutes.",
+        "replacement_cost": "The cost to replace the film if lost or damaged.",
+        "rating": "The film's rating (e.g., G, PG, NC-17).",
+        "special_features": "A list of special features, like 'Trailers' or 'Deleted Scenes'."
+      }
+    },
+    "actor": {
+      "description": "Contains a list of all actors. It is linked to the `film` table through the `film_actor` table.",
+      "columns": {
+        "actor_id": "A unique identifier for each actor.",
+        "first_name": "The actor's first name.",
+        "last_name": "The actor's last name."
+      }
+    },
+    "customer": {
+      "description": "Contains a list of all customers. It links to rental history through the `rental` and `payment` tables.",
+      "columns": {
+        "customer_id": "A unique identifier for each customer.",
+        "store_id": "The store where the customer signed up.",
+        "first_name": "The customer's first name.",
+        "last_name": "The customer's last name.",
+        "email": "The customer's email address.",
+        "address_id": "A foreign key linking to the customer's address in the `address` table.",
+        "active": "A boolean indicating if the customer account is active."
+      }
+    },
+    "rental": {
+      "description": "Records each rental event, linking a specific film copy (`inventory_id`), a customer, and a staff member. It tracks when a film was rented and when it was returned.",
+      "columns": {
+        "rental_id": "A unique identifier for each rental transaction.",
+        "rental_date": "The date and time the film was rented.",
+        "inventory_id": "A foreign key linking to the specific copy of a film in the `inventory` table.",
+        "customer_id": "The customer who rented the film.",
+        "return_date": "The date and time the film was returned. Can be NULL if not yet returned.",
+        "staff_id": "The staff member who processed the rental."
+      }
+    },
+    "payment": {
+      "description": "Stores information about customer payments. Each row represents a single payment.",
+      "columns": {
+        "payment_id": "A unique identifier for each payment.",
+        "customer_id": "The customer who made the payment.",
+        "staff_id": "The staff member who processed the payment.",
+        "rental_id": "The rental for which this payment was made.",
+        "amount": "The amount of the payment.",
+        "payment_date": "The date and time the payment was made."
+      }
+    },
+    "inventory": {
+      "description": "Represents specific, physical copies of films available in the stores. It acts as a link between films and stores.",
+      "columns": {
+        "inventory_id": "A unique identifier for each unique copy of a film.",
+        "film_id": "The film this copy corresponds to.",
+        "store_id": "The store where this copy is located."
+      }
+    },
+    "category": {
+      "description": "Lists the various categories or genres a film can be assigned to, such as 'Action', 'Comedy', or 'Family'.",
+      "columns": {
+        "category_id": "A unique identifier for each category.",
+        "name": "The name of the category."
+      }
+    },
+    "address": {
+      "description": "Contains address information for customers, staff, and stores.",
+      "columns": {
+        "address_id": "Unique identifier for the address.",
+        "address": "The street address.",
+        "district": "The district or state.",
+        "city_id": "A foreign key linking to the `city` table.",
+        "postal_code": "The postal or zip code.",
+        "phone": "The phone number associated with the address."
+      }
+    }
+  }
+}
