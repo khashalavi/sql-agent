@@ -9,7 +9,7 @@ run main
 
 This repository contains the source code for a DIalog system project focused on creating an AI-powered agent capable of interacting with a MySQL database to answer user queries. The agent uses Large Language Models (LLMs) to understand natural language questions, generate SQL queries, and provide relevant answers based on the database schema.
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Project Description](#-project-description)
 - [Getting Started](#-getting-started)
@@ -20,7 +20,7 @@ This repository contains the source code for a DIalog system project focused on 
 - [How It Works](#-how-it-works)
 - [Dependencies](#-dependencies)
 
-## 📜 Project Description
+## Project Description
 
 The primary goal of this project is to develop an intelligent agent that can serve as a natural language interface to a relational database. Users can ask questions in plain English, and the agent will:
 
@@ -32,11 +32,11 @@ The primary goal of this project is to develop an intelligent agent that can ser
 
 This project leverages the `langchain` framework to orchestrate the agent's logic and `OpenAI` models for natural language understanding and generation.
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to set up and run the project locally.
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -60,7 +60,7 @@ DB_SCHEMA=sakila
 SCHEMA_CONTEXT_PATH=configs/schema_context.json
 ```
 
-### 📦 Installation
+### Installation
 
 1.  **Clone the repository:**
     ```bash
@@ -120,7 +120,7 @@ Result:
 [(107, 'GINA', 'DEGENERES', 42)]
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 Here is an overview of the key files and directories in this project:
 
@@ -137,7 +137,7 @@ Here is an overview of the key files and directories in this project:
 -   **`requirements.txt`**: Lists all the Python packages required for the project.
 -   **`query_log.json`**: A log file that records user questions, the agent's reasoning (extracted context), the generated SQL query, and the final result.
 
-## 🧠 How It Works
+## How It Works
 
 The agent operates using a ReAct (Reasoning and Acting) framework, which involves a series of thought-action-observation steps:
 
@@ -151,7 +151,7 @@ The agent operates using a ReAct (Reasoning and Acting) framework, which involve
 
 This iterative process allows the agent to break down complex questions and use its tools effectively to find accurate answers.
 
-## 📦 Dependencies
+## Dependencies
 
 This project relies on the following major Python libraries:
 
